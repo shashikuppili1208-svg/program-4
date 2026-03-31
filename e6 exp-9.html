@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ES6 Features Showcase</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #fdfdfd;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(90deg, #4a90e2, #50c9c3);
+      color: navy;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    .container {
+      display: flex;
+      height: calc(100vh - 100px);
+    }
+    .left {
+      width: 25%;
+      background: #BC8F8F;
+      padding: 20px;
+      color: #ecf0f1;
+      border-right: 3px solid #222;
+    }
+    .feature {
+      cursor: pointer;
+      padding: 12px;
+      margin-bottom: 12px;
+      background: #353839;
+      border-radius: 6px;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .feature:hover {
+      background: #7FFFD4;
+      transform: translateX(5px);
+    }
+    .right {
+      width: 75%;
+      padding: 30px;
+      background: #fafafa;
+      transition: background 0.5s ease;
+    }
+    .right h2 {
+      margin-top: 0;
+      font-size: 1.8em;
+    }
+    .right h3 {
+      margin-bottom: 5px;
+    }
+    pre {
+      background: #2c3e50;
+      color: #ecf0f1;
+      padding: 12px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>ES6 Features Interactive Guide</header>
+
+  <div class="container">
+    <div class="left">
+      <h3>Features</h3>
+      <div class="feature" onclick="showFeature('arrow')">Arrow Functions</div>
+      <div class="feature" onclick="showFeature('letconst')">Let and Const</div>
+      <div class="feature" onclick="showFeature('template')">Template Literals</div>
+      <div class="feature" onclick="showFeature('spreadrest')">Spread & Rest</div>
+      <div class="feature" onclick="showFeature('map')">Map Function</div>
+    </div>
+    <div class="right" id="details">
+      <h2>Welcome!</h2>
+      <p>Select a feature from the left to explore its description, input, and output.</p>
+    </div>
+  </div>
+
+  <script>
+    function showFeature(feature) {
+      const details = document.getElementById('details');
+      let content = '';
+
+      if (feature === 'arrow') {
+        details.style.background = "#eaf6ff";
+        content = `
+          <h2 style="color:#2980b9;">Arrow Functions</h2>
+          <p>Concise syntax for writing functions.</p>
+          <h3 style="color:#27ae60;">Input:</h3>
+          <pre>const add = (a, b) => a + b;
+console.log(add(2, 3));</pre>
+          <h3 style="color:#c0392b;">Output:</h3>
+          <pre>5</pre>
+        `;
+      } else if (feature === 'letconst') {
+        details.style.background = "#fef9e7";
+        content = `
+          <h2 style="color:#d35400;">Let and Const</h2>
+          <p>Block-scoped variables. <code>let</code> allows reassignment, <code>const</code> does not.</p>
+          <h3 style="color:#27ae60;">Input:</h3>
+          <pre>let x = 10;
+x = 20;
+const y = 30;
+// y = 40; // Error</pre>
+          <h3 style="color:#c0392b;">Output:</h3>
+          <pre>x = 20, y = 30</pre>
+        `;
+      } else if (feature === 'template') {
+        details.style.background = "#fceef5";
+        content = `
+          <h2 style="color:#8e44ad;">Template Literals</h2>
+          <p>String interpolation using backticks.</p>
+          <h3 style="color:#27ae60;">Input:</h3>
+          <pre>const name = "Alice";
+console.log(\`Hello, \${name}!\`);</pre>
+          <h3 style="color:#c0392b;">Output:</h3>
+          <pre>Hello, Alice!</pre>
+        `;
+      } else if (feature === 'spreadrest') {
+        details.style.background = "#e8f8f5";
+        content = `
+          <h2 style="color:#16a085;">Spread & Rest</h2>
+          <p>Spread expands arrays/objects, Rest collects arguments.</p>
+          <h3 style="color:#27ae60;">Input:</h3>
+          <pre>const nums = [1, 2, 3];
+const more = [...nums, 4, 5];
+console.log(more);
+
+function sum(...args) {
+  return args.reduce((a, b) => a + b, 0);
+}
+console.log(sum(1, 2, 3, 4));</pre>
+          <h3 style="color:#c0392b;">Output:</h3>
+          <pre>[1, 2, 3, 4, 5]
+10</pre>
+        `;
+      } else if (feature === 'map') {
+        details.style.background = "#f0f9ff";
+        content = `
+          <h2 style="color:#2c3e50;">Map Function</h2>
+          <p>The <code>map()</code> method creates a new array by applying a function to each element.</p>
+          <h3 style="color:#27ae60;">Input:</h3>
+          <pre>const numbers = [1, 2, 3, 4];
+const squares = numbers.map(n => n * n);
+console.log(squares);</pre>
+          <h3 style="color:#c0392b;">Output:</h3>
+          <pre>[1, 4, 9, 16]</pre>
+        `;
+      }
+
+      details.innerHTML = content;
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+Output:
+
+
+ 
+
